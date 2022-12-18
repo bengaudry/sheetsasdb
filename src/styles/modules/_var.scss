@@ -1,0 +1,31 @@
+:root {
+  /* CONST */
+  --top-bar-height: 80px;
+  --max-width: 1350px;
+  --default-padding: 20px;
+
+  --top-bar-bg: rgba(255,255,255,.7);
+
+  --primary-text-color: #000;
+  --secondary-text-color: #969696;
+
+  --body-bg: #fff;
+}
+
+// @media screen and (prefers-color-scheme: light) {
+//   :root {
+//     --top-bar-bg: rgba(255,255,255,.7);
+
+//     --primary-text-color: #000;
+//     --secondary-text-color: #969696;
+//   }
+// }
+
+// @media screen and (prefers-color-scheme: dark) {
+//   :root {
+//     --top-bar-bg: rgba(36,36,36,.7);
+
+//     --primary-text-color: #fff;
+//     --secondary-text-color: #969696;
+//   }
+// }

@@ -1,0 +1,10 @@
+main {
+  margin-top: var(--top-bar-height);
+}
+
+.content {
+  padding: var(--default-padding);
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}

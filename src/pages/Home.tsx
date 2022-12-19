@@ -50,7 +50,7 @@ export default function Home() {
         <div className="flex-1">
           <FakeWindow light>
             <img
-              src="/src/res/sheets-screenshot.webp"
+              src="/src/res/sheets-screenshot.png"
               alt="Google sheets screenshot"
               className="shadow-2xl rounded-b-xl"
             />

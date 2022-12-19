@@ -11,11 +11,11 @@ export function JSONPrettier(props: JSONPrettierProps) {
         <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
       </div>
-      <pre className="px-10 py-5">
+      <pre className="px-6 py-5">
         <code className="language-javascript" data-lang="javascript">
           {val.map((val, index) => (
             <div className="flex flex-row items-center">
-              <div className="w-8 select-none text-slate-500 text-right pr-8">{index}</div>
+              <div className="w-16 select-none text-slate-500 text-right pr-8">{index}</div>
               <span>{val}</span>
             </div>
           ))}

@@ -3,6 +3,8 @@ import CtaPrimary from "../components/Buttons/CtaPrimary";
 import CtaSecondary from "../components/Buttons/CtaSecondary";
 import ButtonWrapper from "../components/Buttons/ButtonWrapper";
 import { JSONPrettier } from "../components/JSONPrettier";
+import HomePagePros from "../components/HomePagePros";
+import Footer from "../components/Footer/Footer";
 
 const jsonExampleCode = `skills: [
   {
@@ -49,10 +51,34 @@ export default function Home() {
       </ResponsiveContainer>
       <ResponsiveContainer
         parentClassName="bg-slate-900 text-white"
-        childrenClassName="flex flex-row items-center gap-20 py-20"
+        childrenClassName="flex flex-row items-center gap-20 py-28"
       >
-        <JSONPrettier value={jsonExampleCode} />
+        <div>
+          <JSONPrettier value={jsonExampleCode} />
+        </div>
+        <div>
+          <h2 className="text-5xl font-extrabold">Easy and powerful</h2>
+          <p className="text-xl mt-5">
+            Sheets as db provides a fully rest API that supports reading,
+            writing, editing and deleting data. It also provides a simple but
+            powerful environment to manage your data visually or by writing
+            code.
+          </p>
+          <CtaPrimary to="/" className="mt-5 text-lg px-8 py-2">
+            Get Started
+          </CtaPrimary>
+        </div>
       </ResponsiveContainer>
+      <ResponsiveContainer childrenClassName="py-28 text-center">
+        <h2 className="text-5xl font-extrabold">Why Sheets as Db</h2>
+        <ul className="flex flex-row items-center justify-center mt-14 gap-8">
+          <HomePagePros title="More data types" content="Sheets as Db uses a system that provides different types of data else than string such as arrays, or booleans represented with a checkbox" isImportant="false" />
+          <HomePagePros title="Entirely free and open-source" content="Sheets as Db was initially created to provide a free and open-source alternative to the similar services that are currently provided" isImportant="false" />
+          <HomePagePros title="Easily editable data" content="Google Sheets allows users to provide a simple interface to their clients that allows them to edit data on the website in real time without editing the source code" isImportant="false" />
+        </ul>
+        <CtaPrimary to="/" className="m-auto mt-10">Start now</CtaPrimary>
+      </ResponsiveContainer>
+      <Footer />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import ResponsiveContainer from "../Layout/ResponsiveContainer";
 
 export default function Navbar() {
   return (
-    <header className="fixed bg-white w-full top-0 left-0 h-20 flex items-center border-b border-slate-300 z-50">
+    <header className="fixed bg-white/75 backdrop-blur-lg w-full top-0 left-0 h-20 flex items-center border-b border-slate-300 z-50">
       <ResponsiveContainer>
         <div className="justify-between flex flex-row items-center">
           <Link className="flex flex-row items-center gap-2" to="/">

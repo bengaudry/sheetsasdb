@@ -19,8 +19,8 @@ export default function Footer() {
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-gray-400 hover:text-white">
-                  Contact
+                <a target="_blank" href="https://github.com/BenGaudry/sheetsasdb" className="text-gray-400 hover:text-white">
+                  GitHub
                 </a>
               </li>
             </ul>

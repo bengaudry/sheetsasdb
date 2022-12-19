@@ -1,0 +1,56 @@
+[
+  {
+    "type": "section",
+    "title": "Get Started",
+    "subSections": [
+      {
+        "type": "subsection",
+        "title": "What is Sheets as DB",
+        "content": "./md/whatIs.md"
+      },
+      {
+        "type": "subsection",
+        "title": "How Sheets as DB works",
+        "content": ""
+      },
+      {
+        "type": "subsection",
+        "title": "Quick start",
+        "content": ""
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "title": "Sending and managing data",
+    "subSections": [
+      {
+        "type": "subsection",
+        "title": "Getting data",
+        "content": ""
+      },
+      {
+        "type": "subsection",
+        "title": "Setting data",
+        "content": ""
+      },
+      {
+        "type": "subsection",
+        "title": "Updating data",
+        "content": ""
+      },
+      {
+        "type": "subsection",
+        "title": "Deleting data",
+        "content": ""
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "title": "Handling errors",
+    "subSections": [
+
+    ]
+  }
+]

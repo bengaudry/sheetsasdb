@@ -19,7 +19,7 @@ export default function Navbar() {
                       ? "active-nav-item text-black font-semibold"
                       : "text-slate-500"
                   }
-                  to="/"
+                  to="/home"
                 >
                   Home
                 </NavLink>

@@ -5,6 +5,7 @@ import ButtonWrapper from "../components/Buttons/ButtonWrapper";
 import { JSONPrettier } from "../components/JSONPrettier";
 import HomePagePros from "../components/HomePagePros";
 import Footer from "../components/Footer/Footer";
+import { FakeWindow } from "../components/FakeWindow/FakeWindow";
 
 const jsonExampleCode = `skills: [
   {
@@ -38,15 +39,22 @@ export default function Home() {
           </p>
           <ButtonWrapper className="mt-10">
             <CtaPrimary to="/docs">Get started</CtaPrimary>
-            <CtaSecondary to="/">Discover</CtaSecondary>
+            <a
+              href="/home#why"
+              className="font-semibold w-max flex flex-row items-center text-xl border-2 border-green-500 bg-transparent text-green-500 transition-colors duration-300 hover:bg-green-500 hover:text-white px-10 py-3 rounded-full"
+            >
+              Discover
+            </a>
           </ButtonWrapper>
         </div>
         <div className="flex-1">
-          <img
-            src="/src/res/sheets-screenshot.webp"
-            alt="Google sheets screenshot"
-            className="shadow-2xl rounded-xl"
-          />
+          <FakeWindow light>
+            <img
+              src="/src/res/sheets-screenshot.webp"
+              alt="Google sheets screenshot"
+              className="shadow-2xl rounded-b-xl"
+            />
+          </FakeWindow>
         </div>
       </ResponsiveContainer>
       <ResponsiveContainer
@@ -69,14 +77,28 @@ export default function Home() {
           </CtaPrimary>
         </div>
       </ResponsiveContainer>
-      <ResponsiveContainer childrenClassName="py-28 text-center">
+      <ResponsiveContainer childrenClassName="py-28 text-center" id="why">
         <h2 className="text-5xl font-extrabold">Why Sheets as Db</h2>
         <ul className="flex flex-row items-center justify-center mt-14 gap-8">
-          <HomePagePros title="More data types" content="Sheets as Db uses a system that provides different types of data else than string such as arrays, or booleans represented with a checkbox" isImportant="false" />
-          <HomePagePros title="Entirely free and open-source" content="Sheets as Db was initially created to provide a free and open-source alternative to the similar services that are currently provided" isImportant="false" />
-          <HomePagePros title="Easily editable data" content="Google Sheets allows users to provide a simple interface to their clients that allows them to edit data on the website in real time without editing the source code" isImportant="false" />
+          <HomePagePros
+            title="More data types"
+            content="Sheets as Db uses a system that provides different types of data else than string such as arrays, or booleans represented with a checkbox"
+            isImportant="false"
+          />
+          <HomePagePros
+            title="Entirely free and open-source"
+            content="Sheets as Db was initially created to provide a free and open-source alternative to the similar services that are currently provided"
+            isImportant="true"
+          />
+          <HomePagePros
+            title="Easily editable data"
+            content="Google Sheets allows users to provide a simple interface to their clients that allows them to edit data on the website in real time without editing the source code"
+            isImportant="false"
+          />
         </ul>
-        <CtaPrimary to="/" className="m-auto mt-10">Start now</CtaPrimary>
+        <CtaPrimary to="/" className="m-auto mt-10">
+          Start now
+        </CtaPrimary>
       </ResponsiveContainer>
       <Footer />
     </div>

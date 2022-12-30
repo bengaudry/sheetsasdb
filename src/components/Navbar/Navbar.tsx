@@ -3,14 +3,14 @@ import ResponsiveContainer from "../Layout/ResponsiveContainer";
 
 export default function Navbar() {
   return (
-    <header className="fixed bg-white/75 backdrop-blur-lg w-full top-0 left-0 h-20 flex items-center border-b border-slate-300 z-50">
+    <header className="fixed bg-white/75 backdrop-blur-lg w-screen top-0 left-0 h-20 flex items-center border-b border-slate-300 z-50">
       <ResponsiveContainer>
         <div className="justify-between flex flex-row items-center">
           <Link className="flex flex-row items-center gap-2" to="/">
             <img src="/icon120.png" className="w-14" />
             <h3 className="font-semibold text-xl">Sheets as Db</h3>
           </Link>
-          <nav>
+          <nav className="hidden lg:block">
             <ul className="flex flex-row items-center w-max gap-10">
               <li>
                 <NavLink

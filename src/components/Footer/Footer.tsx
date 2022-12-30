@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-gray-800 text-white py-20">
       <ResponsiveContainer>
         <div className="container mx-auto flex flex-wrap justify-between items-start">
-          <div className="w-full md:w-1/3 text-center">
+          <div className="w-full mb-10 md:w-1/3 text-center lg:mb-0">
             <h6 className="text-xl font-semibold">Company</h6>
             <ul className="mt-4">
               <li className="mb-2">
@@ -25,7 +25,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="w-full md:w-1/3 text-center">
+          <div className="w-full md:w-1/3 text-center mb-10 lg:mb-0">
             <h6 className="text-xl font-semibold">Resources</h6>
             <ul className="mt-4">
               <li className="mb-2">

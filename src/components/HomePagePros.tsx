@@ -18,7 +18,7 @@ export default function HomePagePros(props: props) {
 function generateClasses(isImportant: string) {
   const BASE =
     "w-96 h-72 bg-white p-8 rounded-2xl text-left border-2 border-slate-300 flex items-center shadow-lg";
-  const IMPORTANT = "scale-110";
+  const IMPORTANT = "lg:scale-110";
 
   if (isImportant === "true") {
     return BASE + " " + IMPORTANT;

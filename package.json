@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-firebase/auth": "^0.2.10",
+    "@react-firebase/database": "^0.3.11",
     "autoprefixer": "^10.4.13",
+    "firebase": "^9.15.0",
+    "firebase-tools": "^1.2.0",
     "postcss": "^8.4.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

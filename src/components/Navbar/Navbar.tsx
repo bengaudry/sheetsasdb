@@ -15,8 +15,10 @@ export default function Navbar() {
           </Link>
           <nav
             className={`${
-              navOpened ? "flex lg:block translate-x-0 shadow-2xl drop-shadow-2xl " : "translate-x-full shadow-none drop-shadow-none"
-            } fixed z-50 bg-white right-0 h-screen top-0 p-10 justify-center transition-all duration-300`}
+              navOpened
+                ? "flex lg:block translate-x-0 shadow-2xl drop-shadow-2xl "
+                : "translate-x-full shadow-none drop-shadow-none"
+            } fixed z-50 bg-white right-0 h-screen top-0 px-10 items-center transition-all duration-300`}
           >
             <ul className="flex flex-col lg:flex-row items-center w-max gap-10">
               <li>
@@ -66,7 +68,10 @@ export default function Navbar() {
             }}
             className="fixed right-10 block z-50"
           >
-            {navOpened ? "Close" : "Menu"}
+            <div className="w-8 h-4 flex flex-col justify-between">
+              <div className={`h-1 w-8 bg-slate-500 rounded-xl origin-center transition-all ${navOpened ? "rotate-45 translate-y-1.5" : ""}`}></div>
+              <div className={`h-1 w-8 bg-slate-500 rounded-xl origin-center transition-all ${navOpened ? "-rotate-45 -translate-y-1.5" : ""}`}></div>
+            </div>
           </button>
         </div>
       </ResponsiveContainer>

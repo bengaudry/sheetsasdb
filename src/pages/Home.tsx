@@ -38,10 +38,10 @@ export default function Home() {
             Sheet to return it in JSON
           </p>
           <ButtonWrapper className="mt-10">
-            <CtaPrimary to="/docs">Get started</CtaPrimary>
+            <CtaPrimary to="/docs" className="text-lg lg:text-xl">Get started</CtaPrimary>
             <a
               href="/home#why"
-              className="font-semibold w-max flex flex-row items-center text-xl border-2 border-green-500 bg-transparent text-green-500 transition-colors duration-300 hover:bg-green-500 hover:text-white px-10 py-3 rounded-full"
+              className="font-semibold w-max flex flex-row items-center text-lg lg:text-xl border-2 border-green-500 bg-transparent text-green-500 transition-colors duration-300 hover:bg-green-500 hover:text-white px-10 py-3 rounded-full"
             >
               Discover
             </a>

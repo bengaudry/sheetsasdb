@@ -6,6 +6,7 @@ import { JSONPrettier } from "../components/JSONPrettier";
 import HomePagePros from "../components/HomePagePros";
 import Footer from "../components/Footer/Footer";
 import { FakeWindow } from "../components/FakeWindow/FakeWindow";
+import sheetsScreenshot from "../res/sheets-screenshot.png";
 
 const jsonExampleCode = `skills: [
   {
@@ -27,21 +28,21 @@ export default function Home() {
     <div className="w-full">
       <ResponsiveContainer childrenClassName="flex lg:flex-row items-center gap-20 py-16 lg:py-28 flex-col">
         <div className="flex-1">
-          <h1 className="text-4xl lg:text-5xl font-extrabold">
+          <h1 className="text-3xl lg:text-5xl font-extrabold">
             Use Google Sheets
             <br />
             as a free database
             <br /> for your project
           </h1>
-          <p className="text-2xl pt-6">
+          <p className="text-xl pt-6">
             Sheets as Db acts like an API and fetches the data from your Google
             Sheet to return it in JSON
           </p>
           <ButtonWrapper className="mt-10">
-            <CtaPrimary to="/docs" className="text-lg lg:text-xl">Get started</CtaPrimary>
+            <CtaPrimary to="/docs" className="text-base lg:text-xl">Get started</CtaPrimary>
             <a
               href="/home#why"
-              className="font-semibold w-max flex flex-row items-center text-lg lg:text-xl border-2 border-green-500 bg-transparent text-green-500 transition-colors duration-300 hover:bg-green-500 hover:text-white px-10 py-3 rounded-full"
+              className="font-semibold w-max flex flex-row items-center text-base lg:text-xl border-2 border-green-500 bg-transparent text-green-500 transition-colors duration-300 hover:bg-green-500 hover:text-white px-10 py-3 rounded-full"
             >
               Discover
             </a>
@@ -50,7 +51,7 @@ export default function Home() {
         <div className="flex-1">
           <FakeWindow light>
             <img
-              src="/src/res/sheets-screenshot.png"
+              src={sheetsScreenshot}
               alt="Google sheets screenshot"
               className="shadow-2xl rounded-b-xl"
             />

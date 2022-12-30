@@ -17,7 +17,6 @@ class App extends Component {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="home" element={<Home />} />
             <Route path="docs" element={<Docs />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route

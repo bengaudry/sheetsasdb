@@ -18,7 +18,7 @@ export default function Navbar() {
               navOpened
                 ? "flex lg:block translate-x-0 shadow-2xl drop-shadow-2xl "
                 : "translate-x-full shadow-none drop-shadow-none"
-            } fixed z-50 bg-white right-0 h-screen top-0 px-10 items-center transition-all duration-300`}
+            } fixed z-50 bg-white right-0 h-screen top-0 px-10 items-center transition-all duration-200`}
           >
             <ul className="flex flex-col lg:flex-row items-center w-max gap-10">
               <li>

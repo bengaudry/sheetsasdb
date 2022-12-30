@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
-  "homepage": "https://bengaudry.github.io/sheetsasdb",
+  "homepage": "https://bengaudry.github.io/sheetsasdb/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "yarn build",
+    "deploy": "npx gh-pages -d dist"
   },
   "dependencies": {
     "@react-firebase/auth": "^0.2.10",

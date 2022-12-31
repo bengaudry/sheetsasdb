@@ -1,9 +1,20 @@
-import { Component, ReactNode, useState } from "react";
+import { Component, ReactNode } from "react";
 import { Sidebar } from "../components/Dashboard/Sidebar";
 import { NewProject } from "../components/Dashboard/NewProject";
 import TabItem from "../components/Dashboard/TabItem";
+import { ProjectType } from "../scripts/projects/projectsManager";
+import { Selector } from "../components/Selector";
 
-const projects: Array<String> = ["helloworld", "helloworld2", "helloworld3"];
+const projects: Array<ProjectType> = [
+  {
+    name: "Students",
+    url: "https://docs.google.com/spreadsheets/d/16JXfe-DQ4qt-9VoUI2WDRxZdaj-5pJ5IONoutE3VpI0/edit#gid=0",
+  },
+  {
+    name: "Clients",
+    url: "https://docs.google.com/spreadsheets/u/0/?tgif=d",
+  },
+];
 
 interface props {
   children?: ReactNode;
@@ -50,13 +61,19 @@ export class Dashboard extends Component {
               }}
             />
             <div className="w-full flex flex-col">
-              <h1>Project : </h1>
-              <p>{this.state.openedProject}</p>
               <nav className="w-full flex flex-row p-2 gap-2">
                 <TabItem isActive="true" name="overview" />
                 <TabItem isActive="false" name="manage" />
-                <TabItem isActive="false" name="sheet" />
+                <TabItem
+                  isActive="false"
+                  name="sheet"
+                  customUrl={this.state.openedProject.url}
+                />
               </nav>
+              <Selector
+                options={[{ name: "Sheet1" }, { name: "Sheet2" }]}
+                onChange={() => console.log("changed")}
+              />
               <div>{this.props.children}</div>
             </div>
           </div>

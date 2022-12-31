@@ -1,3 +1,6 @@
+import { ProjectType } from "../../scripts/projects/projectsManager";
+import { useState } from "react";
+
 interface props {
   projects: any;
   onNewProjectClicked: CallableFunction;
@@ -5,6 +8,8 @@ interface props {
 }
 
 export function Sidebar(props: props) {
+  const [activeProject, setActiveProject] = useState(0);
+
   return (
     <div className="border-r border-r-slate-300 px-6 py-4">
       <div className="flex flex-row items-center gap-10">
@@ -20,17 +25,21 @@ export function Sidebar(props: props) {
           </svg>
         </button>
       </div>
-      <ul>
+      <ul className="pt-5">
         {props.projects.length <= 0 ? (
           <div>No project yet</div>
         ) : (
-          props.projects.map((project: any, index: number) => (
+          props.projects.map((project: ProjectType, index: number) => (
             <li
               onClick={() => {
                 props.onChangeProject(index);
+                setActiveProject(index)
               }}
+              className={`${
+                activeProject === index ? "bg-slate-300 font-semibold" : "bg-transparent font-normal"
+              } rounded-lg px-5 py-2 transition-colors duration-200 cursor-pointer`}
             >
-              {project}
+              {project.name}
             </li>
           ))
         )}

@@ -1,18 +1,17 @@
 import ResponsiveContainer from "../components/Layout/ResponsiveContainer";
 import CtaPrimary from "../components/Buttons/CtaPrimary";
-import CtaSecondary from "../components/Buttons/CtaSecondary";
 import ButtonWrapper from "../components/Buttons/ButtonWrapper";
 import { JSONPrettier } from "../components/JSONPrettier";
-import HomePagePros from "../components/HomePagePros";
+import { HomePagePros } from "../components/HomePagePros";
 import Footer from "../components/Footer/Footer";
 import { FakeWindow } from "../components/FakeWindow/FakeWindow";
-import sheetsScreenshot from "../res/sheets-screenshot.png";
+import sheetsScreenshot from "/res/sheets-screenshot.png";
 
 const jsonExampleCode = `skills: [
   {
     uid: 1,
     job_title: "Software Engineer",
-    skills: ["TypeScript", "Css", "HTML"],
+    skills: ["TypeScript", "Css", "HTML", "Python"],
     degree: "Master of Science"
   },
   {
@@ -41,7 +40,7 @@ export default function Home() {
           <ButtonWrapper className="mt-10">
             <CtaPrimary to="/docs" className="text-base lg:text-xl">Get started</CtaPrimary>
             <a
-              href="/home#why"
+              href="/#why"
               className="font-semibold w-max flex flex-row items-center text-base lg:text-xl border-2 border-green-500 bg-transparent text-green-500 transition-colors duration-300 hover:bg-green-500 hover:text-white px-10 py-3 rounded-full"
             >
               Discover

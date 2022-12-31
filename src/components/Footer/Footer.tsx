@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ResponsiveContainer from "../Layout/ResponsiveContainer";
 
 export default function Footer() {
@@ -29,9 +30,9 @@ export default function Footer() {
             <h6 className="text-xl font-semibold">Resources</h6>
             <ul className="mt-4">
               <li className="mb-2">
-                <a href="#" className="text-gray-400 hover:text-white">
+                <Link to="/docs" className="text-gray-400 hover:text-white">
                   Documentation
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
                 <a href="#" className="text-gray-400 hover:text-white">

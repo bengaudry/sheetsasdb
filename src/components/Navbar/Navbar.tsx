@@ -10,15 +10,15 @@ export default function Navbar() {
       <ResponsiveContainer>
         <div className="justify-between flex flex-row items-center">
           <Link className="flex flex-row items-center gap-2" to="/">
-            <img src="/icon120.png" className="w-14" />
+            <img src="/icon120-transparent.svg" className="w-14" />
             <h3 className="font-semibold text-xl">Sheets as Db</h3>
           </Link>
           <nav
             className={`${
               navOpened
-                ? "flex lg:block translate-x-0 shadow-2xl drop-shadow-2xl "
-                : "translate-x-full shadow-none drop-shadow-none"
-            } fixed z-50 bg-white right-0 h-screen top-0 px-10 items-center transition-all duration-200`}
+                ? "flex lg:block translate-x-0 shadow-2xl drop-shadow-2xl"
+                : "translate-x-full shadow-none drop-shadow-none lg:translate-x-0"
+            } fixed z-50 bg-white right-0 h-screen top-0 px-10 items-center transition-all duration-200 lg:static lg:w-auto lg:h-auto lg:shadow-none lg:drop-shadow-none lg:px-0 lg:bg-transparent`}
           >
             <ul className="flex flex-col lg:flex-row items-center w-max gap-10">
               <li>
@@ -28,7 +28,7 @@ export default function Navbar() {
                       ? "text-black font-semibold"
                       : "text-slate-500 hover:text-black"
                   }
-                  to="/home"
+                  to="/"
                 >
                   Home
                 </NavLink>
@@ -66,7 +66,7 @@ export default function Navbar() {
             onClick={() => {
               setNavOpened(!navOpened);
             }}
-            className="fixed right-10 block z-50"
+            className="fixed right-10 block z-50 lg:hidden"
           >
             <div className="w-8 h-4 flex flex-col justify-between">
               <div className={`h-1 w-8 bg-slate-500 rounded-xl origin-center transition-all ${navOpened ? "rotate-45 translate-y-1.5" : ""}`}></div>

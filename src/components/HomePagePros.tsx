@@ -4,7 +4,7 @@ interface props {
   isImportant: string;
 }
 
-export default function HomePagePros(props: props) {
+export function HomePagePros(props: props) {
   return (
     <li className={generateClasses(props.isImportant)}>
       <div>

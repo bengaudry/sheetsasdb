@@ -1,6 +1,7 @@
 interface props {
   projects: any;
   onNewProjectClicked: CallableFunction;
+  onChangeProject: CallableFunction;
 }
 
 export function Sidebar(props: props) {
@@ -14,8 +15,8 @@ export function Sidebar(props: props) {
           className="bg-green-500 text-white font-extrabold w-10 h-10 flex flex-row items-center justify-center text-3xl rounded-full"
         >
           <svg width="20" height="20">
-            <rect x="7.5" y="0" rx="2" width="5" height="20" fill="#fff" />
-            <rect x="0" y="7.5" rx="2" width="20" height="5" fill="#fff" />
+            <rect x="8.5" y="0" rx="1.5" width="3" height="20" fill="#fff" />
+            <rect x="0" y="8.5" rx="1.5" width="20" height="3" fill="#fff" />
           </svg>
         </button>
       </div>
@@ -23,7 +24,15 @@ export function Sidebar(props: props) {
         {props.projects.length <= 0 ? (
           <div>No project yet</div>
         ) : (
-          props.projects.map((project: any) => <li>{project}</li>)
+          props.projects.map((project: any, index: number) => (
+            <li
+              onClick={() => {
+                props.onChangeProject(index);
+              }}
+            >
+              {project}
+            </li>
+          ))
         )}
       </ul>
     </div>

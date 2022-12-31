@@ -7,10 +7,8 @@ import { Dashboard } from "./pages/Dashboard";
 import { NoPage } from "./pages/NoPage";
 import { Overview } from "./components/Dashboard/sub-pages/Overview";
 import { Manage } from "./components/Dashboard/sub-pages/Manage";
-import * as db from "@react-firebase/database"
 
 class App extends Component {
-
   render() {
     return (
       <BrowserRouter>

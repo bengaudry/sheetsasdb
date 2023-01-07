@@ -17,14 +17,14 @@ export function Overview(props: props) {
         Your Api key
       </label>
       <div className="flex flex-row gap-3">
-        <input
+        <div
           id="api-key-input"
-          type="text"
-          value={apiKey}
-          className="w-72 border-2 border-slate-300 rounded-lg px-3 py-1 text-slate-500 outline-none focus:text-black"
-        />
+          className="w-mas border-2 border-slate-300 rounded-lg px-3 py-1 text-slate-500 outline-none focus:text-black"
+        >
+          {apiKey}
+        </div>
         <button
-          className="px-5 bg-slate-200 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-all hover:shadow-lg"
+          className="px-5 bg-slate-200 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-all hover:shadow-md"
           onClick={() => {
             setCopyBtnText("Copied !");
             window.setTimeout(() => {

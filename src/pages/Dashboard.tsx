@@ -63,7 +63,7 @@ export function Dashboard(props: props) {
           </button>
         </div>
       ) : (
-        <div className="flex flex-row flex-1">
+        <div className="flex flex-col md:flex-row flex-1">
           <Sidebar
             projects={projects}
             onNewProjectClicked={() => {
@@ -75,7 +75,7 @@ export function Dashboard(props: props) {
             }}
           />
           <div className="w-full flex flex-col">
-            <nav className="w-full flex flex-row p-2 gap-2">
+            <nav className="w-full flex flex-row p-2 gap-2 border-b border-slate-300 md:border-b-0">
               <TabItem
                 isActive={currentTab === dashboardTabs.overview ? true : false}
                 name="overview"

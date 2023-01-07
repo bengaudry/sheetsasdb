@@ -12,9 +12,9 @@ export function Sidebar(props: props) {
   const [selectedTable, setSelectedTable] = useState(0);
 
   return (
-    <div className="border-r border-r-slate-300 px-6 py-4">
+    <div className="border-r border-r-slate-300 px-6 py-4 md:block">
       <div className="flex flex-row items-center gap-10">
-        <h1 className="text-3xl font-bold">Dashboard</h1>
+        <h1 className="hidden md:inline text-3xl font-bold">Dashboard</h1>
         <button
           title="New project"
           onClick={() => props.onNewProjectClicked()}

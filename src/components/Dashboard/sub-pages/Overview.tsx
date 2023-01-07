@@ -19,12 +19,15 @@ export function Overview(props: props) {
       <div className="flex flex-row gap-3">
         <div
           id="api-key-input"
-          className="w-mas border-2 border-slate-300 rounded-lg px-3 py-1 text-slate-500 outline-none focus:text-black"
+          className="w-full md:w-max border-2 border-slate-300 rounded-lg px-3 py-1 text-slate-500 outline-none focus:text-black"
         >
           {apiKey}
         </div>
         <button
-          className="px-5 bg-slate-200 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-all hover:shadow-md"
+          className={`${
+            copyBtnText === "Copy" ? "bg-slate-200 text-black" : "bg-green-500 text-white"
+          }
+          w-32 break-keep md:w-max px-3 bg-slate-200 rounded-lg font-semibold md:hover:bg-green-500 md:hover:text-white transition-all hover:shadow-md`}
           onClick={() => {
             setCopyBtnText("Copied !");
             window.setTimeout(() => {
@@ -36,11 +39,11 @@ export function Overview(props: props) {
           {copyBtnText}
         </button>
       </div>
-      <p className="text-slate-500 mb-3 block">
+      <p className="text-slate-500 mb-3 block text-sm md:text-normal">
         This key is private, be careful not to share it with anyone
       </p>
 
-      <div className="px-5 py-4 bg-green-100/20 border border-green-300 rounded-xl w-max font-mono">
+      <div className="w-full md:w-max px-5 py-4 bg-green-100/20 border border-green-300 rounded-xl font-mono text-sm">
         <span className="text-red-500">const</span> apiKey{" "}
         <span className="text-red-500">=</span>{" "}
         <span className="text-blue-400">"{apiKey}"</span>;<br />

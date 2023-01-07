@@ -35,7 +35,7 @@ export function Manage() {
           <option value="year">Year</option>
         </select>
       </div>
-      <div className="flex flex-row justify-end gap-4">
+      <div className="flex flex-row justify-end gap-4 py-4">
         <button className="bg-white text-green-500 font-semibold px-5 py-2 rounded-full border-2 border-green-500">
           Reset
         </button>

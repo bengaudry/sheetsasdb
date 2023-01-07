@@ -12,7 +12,7 @@ export function FakeWindow(props: FakeWindowProps) {
       <div
         className={`${props.dark ? "bg-slate-800 border-slate-500 " : ""} ${
           props.light ? "bg-slate-100 border-slate-300 " : " "
-        } rounded-xl shadow-xl border-2`}
+        } rounded-xl shadow-xl border-2 overflow-hidden`}
       >
         <div
           className={`${props.dark ? "bg-slate-800 border-slate-500 " : ""} ${

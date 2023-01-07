@@ -9,6 +9,7 @@ interface props {
 
 export function Sidebar(props: props) {
   const [activeProject, setActiveProject] = useState(0);
+  const [selectedTable, setSelectedTable] = useState(0);
 
   return (
     <div className="border-r border-r-slate-300 px-6 py-4">
@@ -32,7 +33,7 @@ export function Sidebar(props: props) {
           props.projects.map((project: ProjectType, index: number) => (
             <li
               onClick={() => {
-                props.onChangeProject(index);
+                props.onChangeProject(index, selectedTable);
                 setActiveProject(index);
               }}
             >
@@ -50,8 +51,17 @@ export function Sidebar(props: props) {
                   activeProject === index ? "flex flex-col px-5" : "hidden"
                 } `}
               >
-                {project.tables.map((table) => (
-                  <li className="text-slate-400 hover:text-black cursor-pointer transition-colors">{table.name}</li>
+                {project.tables.map((table, index) => (
+                  <li
+                    className={`${
+                      index === selectedTable
+                        ? "text-black font-semibold"
+                        : "text-slate-400"
+                    } hover:text-black cursor-pointer transition-colors`}
+                    onClick={() => setSelectedTable(index)}
+                  >
+                    {table.name}
+                  </li>
                 ))}
               </ul>
             </li>

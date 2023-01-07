@@ -6,7 +6,6 @@ interface props {
 }
 
 export default function TabItem(props: props) {
-  console.log(props.customUrl)
   return props.customUrl === undefined ? (
     <button
       className={`

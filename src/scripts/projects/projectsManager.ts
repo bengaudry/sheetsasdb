@@ -3,7 +3,7 @@ export type ProjectType = {
   tables: Array<ProjectTables>;
 }
 
-type ProjectTables = {
+export type ProjectTables = {
   name: string;
   url:string;
 }

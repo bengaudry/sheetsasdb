@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { JavascriptPrettier } from "../../JavascriptPrettier";
+import { ProjectTables } from "../../../scripts/projects/projectsManager";
 
-export function Overview() {
+interface props {
+  table: ProjectTables;
+}
+
+export function Overview(props: props) {
   const [apiKey, setApiKey] = useState("e65qz5f4d-5cqsd545-45ds45qsd");
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   return (
@@ -36,21 +40,26 @@ export function Overview() {
         This key is private, be careful not to share it with anyone
       </p>
 
-      <div className="px-5 py-4 bg-green-100/50 border border-green-400 rounded-xl w-max font-mono">
+      <div className="px-5 py-4 bg-green-100/20 border border-green-300 rounded-xl w-max font-mono">
         <span className="text-red-500">const</span> apiKey{" "}
         <span className="text-red-500">=</span>{" "}
         <span className="text-blue-400">"{apiKey}"</span>;<br />
         <span className="text-red-500">const</span> url{" "}
         <span className="text-red-500">=</span>{" "}
         <span className="text-blue-400">
-          "https://api.sheetsasdb.co/${apiKey}"
+          "https://sheetsasdb-4dc95.web.app/api?pr=pr&sh=
+          {props.table.name.replaceAll(" ", "-").toLocaleLowerCase()}"
         </span>
         ;<br />
         <span className="text-purple-500">fetch</span>(url, {"{"}
         <br />
         &nbsp;&nbsp;method: <span className="text-blue-400">'GET'</span>,<br />
         &nbsp;&nbsp;headers: {"{"}
-        {"}"}
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;apiKey:{" "}
+        <span className="text-blue-400">"{apiKey}"</span>
+        <br />
+        &nbsp;&nbsp;{"}"}
         <br />
         {"}"})<br />
         &nbsp;&nbsp;.<span className="text-purple-500">then</span>((

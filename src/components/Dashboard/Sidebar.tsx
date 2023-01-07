@@ -25,7 +25,7 @@ export function Sidebar(props: props) {
           </svg>
         </button>
       </div>
-      <ul className="pt-5">
+      <ul className="pt-5 flex flex-col gap-3">
         {props.projects.length <= 0 ? (
           <div>No project yet</div>
         ) : (
@@ -33,13 +33,27 @@ export function Sidebar(props: props) {
             <li
               onClick={() => {
                 props.onChangeProject(index);
-                setActiveProject(index)
+                setActiveProject(index);
               }}
-              className={`${
-                activeProject === index ? "bg-slate-300 font-semibold" : "bg-transparent font-normal"
-              } rounded-lg px-5 py-2 transition-colors duration-200 cursor-pointer`}
             >
-              {project.name}
+              <div
+                className={`${
+                  activeProject === index
+                    ? "bg-slate-200 font-semibold"
+                    : "bg-transparent font-normal"
+                } rounded-lg px-5 py-2 transition-colors duration-200 cursor-pointer border-2 border-slate-200 hover:bg-slate-200`}
+              >
+                <span>{project.name}</span>
+              </div>
+              <ul
+                className={`${
+                  activeProject === index ? "flex flex-col px-5" : "hidden"
+                } `}
+              >
+                {project.tables.map((table) => (
+                  <li className="text-slate-400 hover:text-black cursor-pointer transition-colors">{table.name}</li>
+                ))}
+              </ul>
             </li>
           ))
         )}

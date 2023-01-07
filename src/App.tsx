@@ -5,8 +5,6 @@ import Home from "./pages/Home";
 import { Docs } from "./pages/Docs";
 import { Dashboard } from "./pages/Dashboard";
 import { NoPage } from "./pages/NoPage";
-import { Overview } from "./components/Dashboard/sub-pages/Overview";
-import { Manage } from "./components/Dashboard/sub-pages/Manage";
 
 class App extends Component {
   render() {
@@ -17,22 +15,7 @@ class App extends Component {
             <Route index element={<Home />} />
             <Route path="docs" element={<Docs />} />
             <Route path="dashboard" element={<Dashboard />} />
-            <Route
-              path="dashboard/overview"
-              element={
-                <Dashboard>
-                  <Overview />
-                </Dashboard>
-              }
-            />
-            <Route
-              path="dashboard/manage"
-              element={
-                <Dashboard>
-                  <Manage />
-                </Dashboard>
-              }
-            />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

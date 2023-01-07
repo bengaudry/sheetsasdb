@@ -1,23 +1,29 @@
-import { NavLink } from "react-router-dom";
-
 interface props {
   name: string;
-  isActive: string;
+  isActive?: boolean;
   customUrl?: string;
+  onClick?: CallableFunction;
 }
 
 export default function TabItem(props: props) {
+  console.log(props.customUrl)
   return props.customUrl === undefined ? (
-    <NavLink
-      className={({ isActive }) =>
-        isActive
-          ? "bg-slate-200 px-4 py-1 rounded-lg transition-colors duration-100"
-          : "bg-transparent px-4 py-1 rounded-lg transition-colors duration-100"
-      }
-      to={`/dashboard/${props.name}`}
+    <button
+      className={`
+        ${
+          props.isActive
+            ? "bg-slate-200 px-4 py-1 rounded-lg transition-colors duration-100 font-semibold"
+            : "bg-transparent px-4 py-1 rounded-lg transition-colors duration-100"
+        }
+      `}
+      onClick={() => {
+        if (props.onClick !== undefined) {
+          props.onClick();
+        }
+      }}
     >
       {capitalize(props.name)}
-    </NavLink>
+    </button>
   ) : (
     <a
       className={

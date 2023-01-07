@@ -3,21 +3,41 @@ import { Sidebar } from "../components/Dashboard/Sidebar";
 import { NewProject } from "../components/Dashboard/NewProject";
 import TabItem from "../components/Dashboard/TabItem";
 import { ProjectType } from "../scripts/projects/projectsManager";
-import { Selector } from "../components/Selector";
+import { Overview } from "../components/Dashboard/sub-pages/Overview";
+import { Manage } from "../components/Dashboard/sub-pages/Manage";
 
 const projects: Array<ProjectType> = [
   {
     name: "Students",
-    url: "https://docs.google.com/spreadsheets/d/16JXfe-DQ4qt-9VoUI2WDRxZdaj-5pJ5IONoutE3VpI0/edit#gid=0",
+    tables: [
+      {
+        name: "Sheet 1",
+        url: "https://docs.google.com/spreadsheets/d/16JXfe-DQ4qt-9VoUI2WDRxZdaj-5pJ5IONoutE3VpI0/edit#gid=0",
+      },
+      {
+        name: "Sheet 2",
+        url: "https://docs.google.com/spreadsheets/d/16JXfe-DQ4qt-9VoUI2WDRxZdaj-5pJ5IONoutE3VpI0/edit#gid=0",
+      },
+    ],
   },
   {
     name: "Clients",
-    url: "https://docs.google.com/spreadsheets/u/0/?tgif=d",
+    tables: [
+      {
+        name: "Sheet 1",
+        url: "https://docs.google.com/spreadsheets/d/16JXfe-DQ4qt-9VoUI2WDRxZdaj-5pJ5IONoutE3VpI0/edit#gid=0",
+      },
+    ],
   },
 ];
 
 interface props {
   children?: ReactNode;
+}
+
+export enum dashboardTabs {
+  overview,
+  manage,
 }
 
 export class Dashboard extends Component {
@@ -29,6 +49,7 @@ export class Dashboard extends Component {
     this.state = {
       isNewProjectPopupOpened: false,
       openedProject: projects[0],
+      currentTab: dashboardTabs.overview,
     };
   }
 
@@ -62,19 +83,40 @@ export class Dashboard extends Component {
             />
             <div className="w-full flex flex-col">
               <nav className="w-full flex flex-row p-2 gap-2">
-                <TabItem isActive="true" name="overview" />
-                <TabItem isActive="false" name="manage" />
                 <TabItem
-                  isActive="false"
+                  isActive={
+                    this.state.currentTab === dashboardTabs.overview
+                      ? true
+                      : false
+                  }
+                  name="overview"
+                  onClick={() => {
+                    this.setState({ currentTab: dashboardTabs.overview });
+                  }}
+                />
+                <TabItem
+                  isActive={
+                    this.state.currentTab === dashboardTabs.manage
+                      ? true
+                      : false
+                  }
+                  name="manage"
+                  onClick={() => {
+                    this.setState({ currentTab: dashboardTabs.manage });
+                  }}
+                />
+                <TabItem
                   name="sheet"
-                  customUrl={this.state.openedProject.url}
+                  customUrl={this.state.openedProject.tables[0].url}
                 />
               </nav>
-              <Selector
-                options={[{ name: "Sheet1" }, { name: "Sheet2" }]}
-                onChange={() => console.log("changed")}
-              />
-              <div>{this.props.children}</div>
+              <div className="px-5 py-2">
+                {this.state.currentTab === dashboardTabs.overview ? (
+                  <Overview />
+                ) : (
+                  <Manage />
+                )}
+              </div>
             </div>
           </div>
         )}

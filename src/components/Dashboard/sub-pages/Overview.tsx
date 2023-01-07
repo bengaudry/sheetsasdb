@@ -19,7 +19,7 @@ export function Overview(props: props) {
       <div className="flex flex-row gap-3">
         <div
           id="api-key-input"
-          className="w-full md:w-max border-2 border-slate-300 rounded-lg px-3 py-1 text-slate-500 outline-none focus:text-black"
+          className="w-full md:w-max border-2 border-slate-300 rounded-lg px-3 py-1 text-slate-500 outline-none truncate"
         >
           {apiKey}
         </div>

@@ -50,7 +50,7 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     activeClassName({
                       onlyBase: "font-normal",
-                      base: "flex flex-row items-center bg-green-500 text-white transition-colors duration-300 hover:bg-green-600 px-6 py-2 rounded-full",
+                      base: "flex flex-row items-center bg-green-500 text-white transition-colors duration-300 md:hover:bg-green-600 px-6 py-2 rounded-full",
                       active: "font-semibold",
                       isActive: isActive,
                     })

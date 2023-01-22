@@ -16,28 +16,6 @@ export default function Navbar() {
               <img src="/icon120-transparent.svg" className="w-10" />
               <h3 className="font-semibold text-xl">Sheets as Db</h3>
             </Link>
-            <div className="flex flex-row items-center gap-5">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-white hover:text-emerald-400"
-                    : "text-neutral-500 hover:text-emerald-400 font-semibold"
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-white hover:text-emerald-400"
-                    : "text-neutral-500 hover:text-emerald-400 font-semibold"
-                }
-                to="/docs"
-              >
-                Docs
-              </NavLink>
-            </div>
           </div>
           <nav
             className={`${
@@ -47,7 +25,7 @@ export default function Navbar() {
             } fixed z-50 bg-white right-0 h-screen top-0 px-10 items-center transition-all duration-200 lg:static lg:w-auto lg:h-auto lg:shadow-none lg:drop-shadow-none lg:px-0 lg:bg-transparent`}
           >
             <div className="flex flex-row items-center gap-3">
-              <CtaSecondary to="/signin">Sign in</CtaSecondary>
+              <CtaSecondary to="/docs">Docs</CtaSecondary>
               <CtaPrimary to="/dashboard">Dashboard</CtaPrimary>
               <div className="block w-px h-8 bg-neutral-700"></div>
               <a href="https://github.com/BenGaudry/sheetsasdb" target="_blank">

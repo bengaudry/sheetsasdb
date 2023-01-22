@@ -23,9 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
-# Config files
-src/config.ts
-
 # Firebase
 .firebase/
 .github/
+
+# Private
+firebaseCredentials.ts

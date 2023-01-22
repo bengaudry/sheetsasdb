@@ -11,7 +11,7 @@ export default function TabItem(props: props) {
       className={`
         ${
           props.isActive
-            ? "bg-slate-200 px-4 py-1 rounded-lg transition-colors duration-100 font-semibold"
+            ? "bg-neutral-700 px-4 py-1 rounded-lg transition-colors duration-100 font-semibold"
             : "bg-transparent px-4 py-1 rounded-lg transition-colors duration-100"
         }
       `}

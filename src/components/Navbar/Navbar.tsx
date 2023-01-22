@@ -46,15 +46,14 @@ export default function Navbar() {
                 : "translate-x-full shadow-none drop-shadow-none lg:translate-x-0"
             } fixed z-50 bg-white right-0 h-screen top-0 px-10 items-center transition-all duration-200 lg:static lg:w-auto lg:h-auto lg:shadow-none lg:drop-shadow-none lg:px-0 lg:bg-transparent`}
           >
-            <ul className="flex flex-col lg:flex-row items-center w-max gap-10">
-              <li className="flex flex-row gap-3">
-                <CtaSecondary to="/signin">Sign in</CtaSecondary>
-
-                <CtaPrimary to="/dashboard" className="">
-                  Dashboard
-                </CtaPrimary>
-              </li>
-            </ul>
+            <div className="flex flex-row items-center gap-3">
+              <CtaSecondary to="/signin">Sign in</CtaSecondary>
+              <CtaPrimary to="/dashboard">Dashboard</CtaPrimary>
+              <div className="block w-px h-8 bg-neutral-700"></div>
+              <a href="https://github.com/BenGaudry/sheetsasdb" target="_blank">
+                <img src="/github-mark-white.png" alt="View on GitHub" className="w-7 opacity-30 transition-opacity hover:opacity-100"/>
+              </a>
+            </div>
           </nav>
           <button
             onClick={() => {

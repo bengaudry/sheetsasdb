@@ -1,5 +1,6 @@
 import ResponsiveContainer from "../components/Layout/ResponsiveContainer";
 import CtaPrimary from "../components/Buttons/CtaPrimary";
+import CtaSecondary from "../components/Buttons/CtaSecondary";
 import ButtonWrapper from "../components/Buttons/ButtonWrapper";
 import { JSONPrettier } from "../components/JSONPrettier";
 import { HomePagePros } from "../components/HomePagePros";
@@ -27,28 +28,23 @@ export default function Home() {
     <div className="w-full">
       <ResponsiveContainer childrenClassName="flex lg:flex-row items-center gap-20 py-16 lg:py-28 flex-col">
         <div className="flex-1">
-          <h1 className="text-3xl lg:text-5xl font-extrabold">
-            Use Google Sheets
-            <br />
-            as a free database
-            <br /> for your project
+          <h1 className="text-3xl lg:text-4xl font-bold">
+            Use Google Sheets as a free
+            <br /> database for your project
           </h1>
-          <p className="text-xl pt-6">
-            Sheets as Db acts like an API and fetches the data from your Google
+          <p className="text-lg font-semibold pt-6 text-neutral-400">
+            Sheets as Db acts like a complete database that fetches the data from your Google
             Sheet to return it in JSON
           </p>
           <ButtonWrapper className="mt-10">
-            <CtaPrimary to="/docs" className="text-base lg:text-xl">Get started</CtaPrimary>
-            <a
-              href="/#why"
-              className="font-semibold w-max flex flex-row items-center text-base lg:text-xl border-2 border-green-500 bg-transparent text-green-500 transition-colors duration-300 hover:bg-green-500 hover:text-white px-10 py-3 rounded-full"
-            >
-              Discover
-            </a>
+            <CtaPrimary to="/docs" className="text-base lg:text-xl">
+              Get started
+            </CtaPrimary>
+            <CtaSecondary to="/">Discover</CtaSecondary>
           </ButtonWrapper>
         </div>
         <div className="flex-1">
-          <FakeWindow light>
+          <FakeWindow dark>
             <img
               src={sheetsScreenshot}
               alt="Google sheets screenshot"
@@ -58,7 +54,7 @@ export default function Home() {
         </div>
       </ResponsiveContainer>
       <ResponsiveContainer
-        parentClassName="bg-slate-900 text-white"
+        parentClassName="border-t border-b border-neutral-800"
         childrenClassName="flex flex-col-reverse lg:flex-row items-center gap-20 py-28"
       >
         <div>
@@ -100,9 +96,6 @@ export default function Home() {
             isImportant="false"
           />
         </ul>
-        <CtaPrimary to="/" className="m-auto mt-10">
-          Start now
-        </CtaPrimary>
       </ResponsiveContainer>
       <Footer />
     </div>

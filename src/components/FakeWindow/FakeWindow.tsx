@@ -10,12 +10,12 @@ export function FakeWindow(props: FakeWindowProps) {
   return (
     <div className="w-screen lg:w-fit px-5">
       <div
-        className={`${props.dark ? "bg-slate-800 border-slate-500 " : ""} ${
+        className={`${props.dark ? "bg-neutral-800 border-neutral-700 " : ""} ${
           props.light ? "bg-slate-100 border-slate-300 " : " "
         } rounded-xl shadow-xl border-2 overflow-hidden`}
       >
         <div
-          className={`${props.dark ? "bg-slate-800 border-slate-500 " : ""} ${
+          className={`${props.dark ? "bg-neutral-800 border-neutral-700 " : ""} ${
             props.light ? "bg-slate-100 border-slate-300 " : " "
           } w-full p-2 border-b-2 flex items-center gap-1 rounded-t-xl`}
         >

@@ -19,6 +19,11 @@ export default function CtaPrimary(props: props) {
   return props.btn ? (
     <button
       className={className}
+      onClick={() => {
+        if (props.onBtnClick !== undefined) {
+          props.onBtnClick();
+        }
+      }}
     >
       {props.children}
     </button>
@@ -26,7 +31,11 @@ export default function CtaPrimary(props: props) {
     <Link
       to={props.to as string}
       className={className}
-      onClick={() => props.onBtnClick}
+      onClick={() => {
+        if (props.onBtnClick !== undefined) {
+          props.onBtnClick();
+        }
+      }}
     >
       <span className="text-base">{props.children}</span>
     </Link>

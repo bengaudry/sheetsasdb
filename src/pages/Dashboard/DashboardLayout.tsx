@@ -1,4 +1,8 @@
+import { useState } from "react";
 import CtaPrimary from "../../components/Buttons/CtaPrimary";
+import Footer from "../../components/Footer/Footer";
+import ResponsiveContainer from "../../components/Layout/ResponsiveContainer";
+import { Popup } from "../../components/Popup/Popup";
 import { ProjectCard } from "./ProjectCard";
 
 type props = {
@@ -7,12 +11,32 @@ type props = {
 };
 
 export function DashboardLayout(props: props) {
+  const [isNewProjectPopupOpened, setNewProjectPopupOpened] = useState(false);
   return (
-    <div className="px-4 py-4">
-      <CtaPrimary>New project</CtaPrimary>
-      <div className="pt-3 pb-3 font-semibold">{props.user.displayName}'s projects :</div>
-      <ProjectCard name="Mum" nbOfSheets={2}/>
-      <CtaPrimary btn danger onBtnClick={() => { alert("hfuysefq");}}>Logout</CtaPrimary>
+    <div>
+      <ResponsiveContainer childrenClassName="px-4 py-8 mb-24">
+        <div className="flex flex-row gap-2 items-center sm:gap-5 w-full justify-between">
+          <p className="text-xl font-semibold text-neutral-500">
+            Welcome {props.user.displayName}
+          </p>
+          <CtaPrimary
+            btn
+            danger
+            onBtnClick={() => {
+              props.onLogout();
+            }}
+          >
+            Logout
+          </CtaPrimary>
+        </div>
+        <p className="pb-6 text-4xl font-bold leading-9">Your projects :</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 w-full gap-6">
+          <ProjectCard name="Mum" nbOfSheets={2} />
+          <ProjectCard name="New project" onClick={() => setNewProjectPopupOpened(true)}/>
+        </div>
+      </ResponsiveContainer>
+      <Popup shown={isNewProjectPopupOpened} onClose={() => setNewProjectPopupOpened(false)}>Hey</Popup>
+      <Footer />
     </div>
   );
 }

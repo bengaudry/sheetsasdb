@@ -3,7 +3,7 @@ import ResponsiveContainer from "../Layout/ResponsiveContainer";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 border-t border-neutral-800 text-white py-20">
+    <footer className="bg-neutral-900 border-t border-neutral-800 text-white py-20 w-full">
       <ResponsiveContainer>
         <div className="container mx-auto flex flex-wrap justify-between items-start">
           <div className="w-full mb-10 md:w-1/3 text-center lg:mb-0">

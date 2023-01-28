@@ -2,6 +2,7 @@ interface props {
   onClose?: CallableFunction;
   children: any;
   shown?: boolean;
+  title?: string;
 }
 
 export function Popup(props: props) {
@@ -17,6 +18,7 @@ export function Popup(props: props) {
       }}
     >
       <div className="bg-neutral-900 px-8 py-5 border-2 border-neutral-600 rounded-xl h-max w-full md:w-1/2">
+        <p>{props.title}</p>
         {props.children}
       </div>
     </div>

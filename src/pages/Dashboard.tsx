@@ -3,23 +3,35 @@ import { useState, useEffect } from "react";
 import { signInWithPopup } from "firebase/auth";
 import { DashboardLayout } from "./Dashboard/DashboardLayout";
 import Footer from "../components/Footer/Footer";
+import { createUserInDb } from "../scripts/user/handleUsersAccount";
 
 export function Dashboard() {
   const [userEmail, setUserEmail] = useState("");
   const [userName, setUserName] = useState("");
+  const [userId, setUserId] = useState("");
   const handleSignIn = () => {
     signInWithPopup(auth, provider).then((data) => {
-      console.log(data);
+      // Add the user in the React State
       setUserEmail(data.user.email as string);
       setUserName(data.user.displayName as string);
+      setUserId(data.user.uid as string);
+      // Add the user in the local storage
       localStorage.setItem("email", data.user.email as string);
       localStorage.setItem("displayName", data.user.displayName as string);
+      localStorage.setItem("uid", data.user.uid as string);
+      // Add the user in db
+      createUserInDb({
+        displayName: data.user.displayName as string,
+        uid: data.user.uid as string,
+        email: data.user.email as string,
+      });
     });
   };
 
   useEffect(() => {
     setUserEmail(localStorage.getItem("email") as string);
     setUserName(localStorage.getItem("displayName") as string);
+    setUserId(localStorage.getItem("uid") as string);
   });
 
   return (
@@ -29,8 +41,8 @@ export function Dashboard() {
           <DashboardLayout
             user={{ email: userEmail, displayName: userName }}
             onLogout={() => {
-              alert("Logging out");
               localStorage.clear();
+              location.reload();
             }}
           />
         </div>
